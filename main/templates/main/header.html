@@ -1,0 +1,30 @@
+{% load static %}
+{% load pwa %}
+
+<head>	
+ {% progressive_web_app_meta %} 
+  <link rel="apple-touch-icon" href="{% static 'icons/aurss.192x192.png' %}">
+  <link rel="manifest" href="{% static manifest.json %}">
+	<link  href="{% static 'tinymce/css/prism.css' %}" rel="stylesheet">
+  <!-- viewport and how the app must behave when on full screen-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            
+</head>
+
+<body>
+  {% include "main/includes/navbar.html" %}
+  {% include "main/includes/messages.html" %}
+  
+  <div class="container">
+    {% block content %}
+    {% endblock %}
+  </div>
+ {% include "main/includes/footer.html" %}
+</body>
+
+<script src="{% static 'tinymce/js/prism.js' %}"></script>

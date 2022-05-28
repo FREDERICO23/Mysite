@@ -1,0 +1,24 @@
+
+{% extends "main/header.html" %}
+{% block content %}
+
+  <div class="row">
+ 	{% for tut in tutorials %}
+    <div class="col s6 m6 ">
+      <div class="card small green " style="background-color: #D1CFCC">
+        <div class="card-content black-text">
+          <span class="card-title", style="font-family: Times New Roman; font-size: 30px"><b>{{tut.tutorial_title}}</b></span>
+          	<p style="font-family: Times New Roman, font-size: 70%" >{{tut.tutorial_published}}</p>
+			       <p>{{tut.tutorial_content|safe}}</p>
+			       <br> </br>
+             
+		    </div>
+        <div class="card-action">
+                <a href="/coming">Documentation</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+ 
+{% endblock %}
